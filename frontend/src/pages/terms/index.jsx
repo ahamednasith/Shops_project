@@ -1,6 +1,7 @@
 import React from "react";
 import "../../App.css";
 import { Helmet } from "react-helmet";
+import logo from "../images/logo.png";
 import apple57x57 from "../images/apple-touch-icon-57x57.png";
 import apple72x72 from "../images/apple-touch-icon-72x72.png";
 import apple76x76 from "../images/apple-touch-icon-76x76.png";
@@ -52,7 +53,7 @@ export default function Terms() {
             <div class="privacy-theme">
                 <section class="boxed-up">
                     <header class="header-privacy">
-                        <img src="images/logo.png" alt="logo" />
+                        <img src={logo} alt="logo" />
                         <div>
                             <p>Shops</p>
                             <p>Near me</p>
