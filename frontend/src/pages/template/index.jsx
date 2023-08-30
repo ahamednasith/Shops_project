@@ -1,5 +1,10 @@
 import React from "react";
 import "../../App.css";
+import logo from "../images/logo.png";
+import appStore from "../images/appstore.png";
+import playStore from "../images/playstore.png";
+import phone1 from "../images/phone1.png";
+import phone2 from "../images/phone2.png";
 
 export default function Template() {
     return (
@@ -8,7 +13,7 @@ export default function Template() {
                 <div class="shop-static">
                     <header class="header-index">
                         <div class="logo-align">
-                            <img alt="logo" />
+                            <img src={logo} alt="logo" />
                             <div>
                                 <h1>Shops</h1>
                                 <p>Near Me</p>
@@ -16,13 +21,13 @@ export default function Template() {
                         </div>
                         <p class="shop-description">Shop Near is a cutting-edge mobile application designed to enhance your shopping experience by providing a comprehensive and convenient way to discover and locate nearby stores, boutiques, and shopping centers. Whether you're searching for the latest fashion trends, electronics, home decor, or any other type of retail therapy, Shop Near is here to guide you.</p>
                         <div class="stores">
-                            <a href="#f"><img src="/Users/ahamednasith/Documents/Shops_project/frontend/images/appstore.png" alt="appstore" /><p>Coming Soon!</p></a>
-                            <a href="#s"><img src="/Users/ahamednasith/Documents/Shops_project/frontend/images/playstore.png" alt="playstore" /><p>Coming Soon!</p></a>
+                            <a href="#f"><img src={appStore} alt="appstore" /><p>Coming Soon!</p></a>
+                            <a href="#s"><img src={playStore} alt="playstore" /><p>Coming Soon!</p></a>
                         </div>
                     </header>
                     <div class="phone-images">
-                        <img src="/Users/ahamednasith/Documents/Shops_project/frontend/images/phone1.png" alt="phone" />
-                        <img src="/Users/ahamednasith/Documents/Shops_project/frontend/images/phone2.png" alt="phone" />
+                        <img src={phone1} alt="phone" />
+                        <img src={phone2} alt="phone" />
                     </div>
                 </div>
 

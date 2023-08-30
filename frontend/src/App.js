@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Template/>}/>
         <Route path="support" element={<Support/>}/>
-        <Route path="terms/privacy" elements={<Terms/>}/>
+        <Route path="terms" elements={<Terms/>}/>
       </Routes>
     </Router>
   )

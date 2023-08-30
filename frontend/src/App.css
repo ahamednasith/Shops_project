@@ -39,16 +39,17 @@ body
 }
 @font-face {
   font-family: shop-regular;
-  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/fonts/AvenirNextLTPro-Regular.otf);
+  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/pages/fonts/AvenirNextLTPro-Regular.otf);
 }
 @font-face {
   font-family: shop-bold;
-  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/fonts/AvenirNextLTPro-Bold.otf);
+  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/pages/fonts/AvenirNextLTPro-Bold.otf);
 }
 @font-face {
   font-family: shop-light;
-  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/fonts/AvenirNextLTPro-It.otf);
+  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/pages/fonts/AvenirNextLTPro-It.otf);
 }
+
 body
 {
     font-family: shop-regular;
@@ -130,7 +131,6 @@ body
 }
 .logo-align img
 {
-  content:url(/Users/ahamednasith/Documents/Shops_project/frontend/images/logo.png);
   width: 85px;
   margin-right: 20px;
 }
@@ -179,12 +179,11 @@ body
 }
 .stores a:first-child
 {
-  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/images/appstore.png);
+ 
   flex-basis: 100px;
 }
 .stores a:nth-child(2)
 {
-  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/images/playstore.png);
   flex-basis: 100px;
 }
 .phone-images, .header-index
@@ -201,7 +200,7 @@ body
 }
 .phone-images::before
 {
-  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/images/dots.png);
+  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/pages/images/dots.png);
   position: absolute;
   right: -800px;
   z-index: -2;
@@ -216,13 +215,11 @@ body
 }
 .phone-images img:first-child
 {
-  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/images/phone1.png);
   width: 65%;
   left: -25px;
 }
 .phone-images img:nth-child(2)
 {
-  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/images/phone2.png);
   z-index: -1;
   left: 140px;
   width: 75%;
@@ -289,7 +286,6 @@ body
 }
 .header-privacy img
 {
-  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/images/logo.png);
   width: 60px;
   margin-right: 10px;
   filter: var(--invert);
