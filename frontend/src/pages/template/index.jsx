@@ -7,12 +7,12 @@ import playStore from "../images/playstore.png";
 import phone1 from "../images/phone1.png";
 import phone2 from "../images/phone2.png";
 import apple57x57 from "../images/apple-touch-icon-57x57.png";
-import apple72x72 from "../images/apple-touch-icon-72x72.png"; 
+import apple72x72 from "../images/apple-touch-icon-72x72.png";
 import apple76x76 from "../images/apple-touch-icon-76x76.png";
 import apple114x114 from "../images/apple-touch-icon-114x114.png";
-import apple120x120 from "../images/apple-touch-icon-120x120.png"; 
+import apple120x120 from "../images/apple-touch-icon-120x120.png";
 import apple144x144 from "../images/apple-touch-icon-144x144.png";
-import apple152x152 from "../images/apple-touch-icon-152x152.png"; 
+import apple152x152 from "../images/apple-touch-icon-152x152.png";
 import apple180x180 from "../images/apple-touch-icon-180x180.png";
 import favicon from "../images/favicon.ico";
 
@@ -60,10 +60,10 @@ export default function Template() {
                         <header class="header-index">
                             <div class="logo-align">
                                 <img src={logo} alt="logo" />
-                                    <div>
-                                        <h1>Shops</h1>
-                                        <p>Near Me</p>
-                                    </div>
+                                <div>
+                                    <h1>Shops</h1>
+                                    <p>Near Me</p>
+                                </div>
                             </div>
                             <p class="shop-description">Shop Near is a cutting-edge mobile application designed to enhance your shopping experience by providing a comprehensive and convenient way to discover and locate nearby stores, boutiques, and shopping centers. Whether you're searching for the latest fashion trends, electronics, home decor, or any other type of retail therapy, Shop Near is here to guide you.</p>
                             <div class="stores">
@@ -78,9 +78,9 @@ export default function Template() {
                     </div>
                 </section>
                 <footer class="footer-index">
-                    <div class="footer-flex-index">
-                        <a href="https://storesnearme.in/terms#privacy" target="_self">Privacy Policy</a>
-                        <a href="https://storesnearme.in/terms" target="_self">Terms & Conditions</a>
+                    <div className="footer-flex-index">
+                        <a href="http://localhost:3000/terms#privacy" target="_self">Privacy Policy</a>
+                        <a href="terms" target="_self">Terms & Conditions</a>
                     </div>
                     <p>© Copyrights 2023 | All rights reserved</p>
                 </footer>
