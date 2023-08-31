@@ -79,7 +79,7 @@ export default function Template() {
                 </section>
                 <footer class="footer-index">
                     <div className="footer-flex-index">
-                        <a href="http://localhost:3000/terms#privacy" target="_self">Privacy Policy</a>
+                        <a href="terms#privacy" target="_self">Privacy Policy</a>
                         <a href="terms" target="_self">Terms & Conditions</a>
                     </div>
                     <p>© Copyrights 2023 | All rights reserved</p>
