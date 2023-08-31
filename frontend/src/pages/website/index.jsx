@@ -4,13 +4,7 @@ import logo from "../images/logo.png";
 
 export default function Website(){
     return (
-        <section className="banner" style={{
-            backgroundImage: `url("http://localhost:7373/images/images1693289356443.jpg")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            width: "100%",
-            borderRadius: "0px 0px 40px 40px"
-          }}>
+        <section className="banner">
             <div className="container">
               <div className="row pt-5">
                 <div className="col-md-5 leftcolumn">
