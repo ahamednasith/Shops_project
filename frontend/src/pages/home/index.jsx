@@ -16,7 +16,7 @@ import apple152x152 from "../images/apple-touch-icon-152x152.png";
 import apple180x180 from "../images/apple-touch-icon-180x180.png";
 import favicon from "../images/favicon.ico";
 
-export default function Template() {
+export default function Home() {
     return (
         <div>
             <Helmet>

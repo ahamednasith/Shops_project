@@ -1,9 +1,10 @@
 import React from 'react';
-import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
-import Template from './pages/home';
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
+import Home from './pages/home';
 import Support from './pages/support';
 import Terms from './pages/terms';
-import Website from './pages/website';
+import Template from './pages/template';
+import Error from './pages/error';
 
 function CatchAll() {
   const currentPath = window.location.pathname;
@@ -13,12 +14,13 @@ function App() {
   return(
     <Router>
       <Routes>
-        <Route path="/" element={<Template/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="support" element={<Support/>}/>
         <Route path="terms" element={<Terms/>}/>
-        <Route path="website" element={<Website/>}/>
+        <Route path="template" element={<Template/>}/>
+        <Route path="error" element={<Error/>}/> 
         <Route path="*" element={<CatchAll/>}/>
-        </Routes>
+      </Routes>
     </Router>
   )
 }
