@@ -11,31 +11,32 @@ import apple144x144 from "../images/apple-touch-icon-144x144.png";
 import apple152x152 from "../images/apple-touch-icon-152x152.png";
 import apple180x180 from "../images/apple-touch-icon-180x180.png";
 import favicon from "../images/favicon.ico";
+import banner from "../images/banner.jpeg";
 
 export default function Terms() {
     return (
         <div>
             <Helmet>
-                <meta charset="UTF-8" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Shops Near Me</title>
+                <meta charset="UTF-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Terms & Conditions - Shops Near Me</title>
 
-                <meta property="og:url" content="https://storesnearme.in/" />
+                <meta property="og:url" content="https://storesnearme.in"/>
                 <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="Shops Near Me" />
-                <meta property="og:title" content="Shops Near Me" />
-                <meta property="og:description" content="Shop Near is a cutting-edge mobile application designed to enhance your shopping experience by providing a comprehensive and convenient way to discover and locate nearby stores, boutiques, and shopping centers. Whether you're searching for the latest fashion trends, electronics, home decor, or any other type of retail therapy, Shop Near is here to guide you." />
-                <meta property="og:image" content="https://storesnearme.in/images/banner.jpeg" />
+                <meta property="og:site_name" content="Shops Near Me"/>
+                <meta property="og:title" content="Shops Near Me"/>
+                <meta property="og:description" content="Shop Near is a cutting-edge mobile application designed to enhance your shopping experience by providing a comprehensive and convenient way to discover and locate nearby stores, boutiques, and shopping centers. Whether you're searching for the latest fashion trends, electronics, home decor, or any other type of retail therapy, Shop Near is here to guide you."/>
+                <meta property="og:image" content={banner}/>
 
                 <meta property="og:locale" content="en_us" />
 
-                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:domain" value="https://storesnearme.in/" />
                 <meta name="twitter:url" value="https://storesnearme.in/" />
-                <meta name="twitter:title" content="Shops Near Me" />
-                <meta name="twitter:description" content="Shop Near is a cutting-edge mobile application designed to enhance your shopping experience by providing a comprehensive and convenient way to discover and locate nearby stores, boutiques, and shopping centers. Whether you're searching for the latest fashion trends, electronics, home decor, or any other type of retail therapy, Shop Near is here to guide you." />
-                <meta name="twitter:image" content="https://storesnearme.in/images/banner.jpeg" />
+                <meta name="twitter:title" content="Shops Near Me"/>
+                <meta name="twitter:description" content="Shop Near is a cutting-edge mobile application designed to enhance your shopping experience by providing a comprehensive and convenient way to discover and locate nearby stores, boutiques, and shopping centers. Whether you're searching for the latest fashion trends, electronics, home decor, or any other type of retail therapy, Shop Near is here to guide you."/>
+                <meta name="twitter:image" content={banner} />
 
                 <link rel="shortcut icon" href={favicon} type="image/x-icon" />
                 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
@@ -49,6 +50,7 @@ export default function Terms() {
                 <link rel="apple-touch-icon" sizes="180x180" href={apple180x180} />
                 <meta name="theme-color" content="#000" />
                 <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+                <link rel="stylesheet" href="App.css"></link>
             </Helmet>
             <div class="privacy-theme">
                 <section class="boxed-up">
