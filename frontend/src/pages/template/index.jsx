@@ -8,12 +8,12 @@ import { Helmet } from "react-helmet";
 
 export default function Template() {
     const [template, setTemplate] = useState('');
-    const [preview,setPreview] = useState([]);
-    const [temp,setTemp] = useState('');
-    const [verify,setVerify] = useState('');
+    const [preview, setPreview] = useState([]);
+    const [temp, setTemp] = useState('');
+    const [verify, setVerify] = useState('');
     const [style, setStyle] = useState('');
-    const [fetchId,setFetchId] = useState('');
-    const [load,setLoad] = useState(false);
+    const [fetchId, setFetchId] = useState('');
+    const [load, setLoad] = useState(false);
 
     const getBanner = async () => {
         let tempId = 0;
@@ -33,46 +33,52 @@ export default function Template() {
             setStyle(type);
             setTemp(tempId);
             setVerify(verifyId);
+            getPreview(tempId, type, verifyId, 0);
+            getPreview(tempId,type,verifyId,0);
+            getPreview(tempId, type, verifyId, 0);
         }
         try {
-            const response = await axios.post(`https://pepzoondev.hifrds.com/api/v3/shopDashboard/getTemplateDetail`, {tempId:tempId,type:type,verifyId:verifyId,});
+            const response = await axios.post(`https://pepzoondev.hifrds.com/api/v3/shopDashboard/getTemplateDetail`, { tempId: tempId, type: type, verifyId: verifyId, });
             const templates = response.data;
             const count = templates.length;
             if (count === 0) {
                 Navigate('/error');
             }
             setTemplate(response.data);
-            if(type==="preview"){
-                getPreview(tempId,type,verifyId,0);
+            if (type === "preview") {
+                getPreview(tempId, type, verifyId, 0);
             }
         } catch (error) {
             toast.error('Error fetching profile:', error.message);
         }
     };
-    const getPreview = async (tempId,type,verifyId,fetchId) =>{
+
+    const getPreview = async (tempId, type, verifyId, fetchId) => {
         try {
-            const counteraction  = await axios.post("https://pepzoondev.hifrds.com/api/v3/shopDashboard/getPreviewProduct",
-            {
-                tempId:tempId,
-                type:type,
-                verifyId:verifyId,
-                fetchId:fetchId
-            });
-            setPreview([...preview,...counteraction.data])
-            if(counteraction.data.length === 6){
+            const counteraction = await axios.post("https://pepzoondev.hifrds.com/api/v3/shopDashboard/getPreviewProduct",
+                {
+                    tempId: tempId,
+                    type: type,
+                    verifyId: verifyId,
+                    fetchId: fetchId
+                });
+            setPreview([...preview, ...counteraction.data])
+            if (counteraction.data.length === 6) {
                 const Id = counteraction.data[counteraction.data.length - 1].id;
                 setFetchId(Id);
                 setLoad(true);
-            } else{
+            } else {
                 setLoad(false);
             }
         } catch (error) {
             toast.error('Error fetching profile:', error.message);
         }
     };
-    useEffect(()=>{
+    useEffect(() => {
         getBanner();
-    },[]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+ 
     return (
         <div>
             <Helmet>
@@ -136,9 +142,15 @@ export default function Template() {
                                         </div>
                                     ))}
                                     {load && fetchId && (
+                                        <div className="loadMore">
                                     <div className="loadMore">
+                                        <div className="loadMore">
+                                            <div onClick={() => getPreview(temp, style, verify, fetchId)}>Load More</div>
+                                        </div>
                                         <div onClick={() => getPreview(temp,style,verify,fetchId)}>Load More</div>
                                     </div>
+                                            <div onClick={() => getPreview(temp, style, verify, fetchId)}>Load More</div>
+                                        </div>
                                     )}
                                 </div>
                             </div>
