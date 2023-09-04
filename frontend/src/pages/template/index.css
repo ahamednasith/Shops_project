@@ -1,3 +1,4 @@
+
 .banner .mainImage {
     width: 100%;
 }
@@ -182,49 +183,6 @@
         font-size:8px;
     } 
 }
-/* slider */
-.slick-prev {
-    position: absolute;
-    top: 50%;
-    left:10px;
-    outline: none;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 30px;
-    background-color: #003459;
-    color: #ccc;
-    z-index: 99;
-}
-.slick-next {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    outline: none;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 30px;
-    background-color: #003459;
-    color: #ccc;
-    z-index: 99;
-}
-.slick-slider .slick-prev {
-    font-size: 0;
-}
-.slick-slider .slick-prev::before {
-    content: '<';
-    font-size: 20px;
-    color: #fff
-}
-.slick-slider .slick-next {
-    font-size: 0;
-}
-.slick-slider .slick-next::after {
-    content: '>';
-    font-size: 20px;
-    color: #fff
-}
 .product .loadMore {
     font-size: 20px;
     cursor: pointer;
@@ -235,4 +193,31 @@
     .banner .noimage{
         height: 400px;
     }
+}
+
+.slick-arrow.slick-prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    display: flex;
+    outline: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    color: #ccc;
+    z-index: 99;
+}
+
+.slick-arrow.slick-next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    outline: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    color: #ccc;
+    z-index: 99;
 }

@@ -4,6 +4,9 @@ import axios from 'axios';
 import { Navigate } from "react-router-dom";
 import './index.css';
 import { Helmet } from "react-helmet";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
 
 export default function Template() {
@@ -34,7 +37,7 @@ export default function Template() {
             setTemp(tempId);
             setVerify(verifyId);
             getPreview(tempId, type, verifyId, 0);
-            getPreview(tempId,type,verifyId,0);
+            getPreview(tempId, type, verifyId, 0);
             getPreview(tempId, type, verifyId, 0);
         }
         try {
@@ -76,9 +79,9 @@ export default function Template() {
     };
     useEffect(() => {
         getBanner();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
- 
+
     return (
         <div>
             <Helmet>
@@ -89,74 +92,147 @@ export default function Template() {
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"></link>
             </Helmet>
             <div>
-                {template && template.map((template, index) => (
-                    <section key={index} className="banner" style={{
-                        backgroundImage: `url(https://d1whtbopipnjq0.cloudfront.net/shopTemplate/${template.backgroundImage})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        width: "100%",
-                        borderRadius: "0px 0px 40px 40px"
-                    }}>
-                        <div className="container">
-                            <div className="row pt-5">
-                                <div className="col-md-5 leftcolumn">
-                                    <h3>{template.heading}</h3>
-                                    <p>{template.description}</p>
-                                    <button className="btn">{template.buttonText}</button>
-                                </div>
-                                <div className="col-md-7">
-                                    <img src={`https://d1whtbopipnjq0.cloudfront.net/shopTemplate/${template.mainImage}`} alt="Main" className="mainImage" />
+                <Slider
+                    dots={true}
+                    infinite={true}
+                    speed={300}
+                    slidesToShow={1}
+                    prevArrow={<button type="button" className="slick-prev">Previous</button>}
+                    nextArrow={<button type="button" className="slick-next">Next</button>}
+                    responsive={[
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                dots: true,
+                                infinite: true,
+                                speed: 300,
+                                arrows: true,
+                                slidesToShow: 1
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                autoplay: true,
+                                arrows: false,
+                                dots: true,
+                                infinite: true,
+                                speed: 300,
+                                centerPadding: '40px',
+                                slidesToShow: 1
+                            }
+                        },
+                        {
+                            breakpoint: 240,
+                            settings: {
+                                autoplay: true,
+                                arrows: false,
+                                dots: true,
+                                infinite: true,
+                                speed: 300,
+                                centerPadding: '40px',
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
+                    }>
+                    {template && template.map((template, index) => (
+                        <div key={index} className="banner">
+                            <div style={{
+                                backgroundImage: `url(https://d1whtbopipnjq0.cloudfront.net/shopTemplate/${template.backgroundImage})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                width: "100%",
+                                borderRadius: "0px 0px 40px 40px"
+                            }}>
+                                <div className="container">
+                                    <div className="row pt-5">
+                                        <div className="col-md-5 leftcolumn">
+                                            <h3>{template.heading}</h3>
+                                            <p>{template.description}</p>
+                                            <button className="btn">{template.buttonText}</button>
+                                        </div>
+                                        <div className="col-md-7">
+                                            <img src={`https://d1whtbopipnjq0.cloudfront.net/shopTemplate/${template.mainImage}`} alt="Main" className="mainImage" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                ))}
-                {style === "template" ? (
-                    <section className="product">
-                        <div className="container py-5">
-                            <h1 className="pb-4"> Products </h1>
-                            <div className="row">
-                                {(() => {
-                                    const videos = [];
-                                    for (let i = 1; i <= 6; i++) {
-                                        videos.push(
-                                            <div className="col-sm-6 col-md-4 p-2 p-sm-3 p-lg-4" key={i}>
-                                                <video src={`https://d1whtbopipnjq0.cloudfront.net/shopVideo/shopTemplateVideo${i}.mp4`} autoPlay loop muted></video>
-                                            </div>
-                                        );
-                                    }
-                                    return videos;
-                                })()}
+                    ))}
+                    {template && template.map((template, index) => (
+                        <div key={index} className="banner">
+                            <div style={{
+                                backgroundImage: `url(https://d1whtbopipnjq0.cloudfront.net/shopTemplate/${template.backgroundImage})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                width: "100%",
+                                borderRadius: "0px 0px 40px 40px"
+                            }}>
+                                <div className="container">
+                                    <div className="row pt-5">
+                                        <div className="col-md-5 leftcolumn">
+                                            <h3>{template.heading}</h3>
+                                            <p>{template.description}</p>
+                                            <button className="btn">{template.buttonText}</button>
+                                        </div>
+                                        <div className="col-md-7">
+                                            <img src={`https://d1whtbopipnjq0.cloudfront.net/shopTemplate/${template.mainImage}`} alt="Main" className="mainImage" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </section>
-                ) : (
-                    style === "preview" && (
+                    ))}
+                </Slider>
+                {
+                    style === "template" ? (
                         <section className="product">
                             <div className="container py-5">
                                 <h1 className="pb-4"> Products </h1>
                                 <div className="row">
-                                    {preview && preview.map((preview, index) => (
-                                        <div class="col-sm-6 col-md-4 p-2 p-sm-3 p-lg-4" key={index}>
-                                            <video src={`https://d1whtbopipnjq0.cloudfront.net/shopVideo/${preview.videoFilename}`} autoPlay loop muted></video>
-                                        </div>
-                                    ))}
-                                    {load && fetchId && (
-                                        <div className="loadMore">
-                                    <div className="loadMore">
-                                        <div className="loadMore">
-                                            <div onClick={() => getPreview(temp, style, verify, fetchId)}>Load More</div>
-                                        </div>
-                                        <div onClick={() => getPreview(temp,style,verify,fetchId)}>Load More</div>
-                                    </div>
-                                            <div onClick={() => getPreview(temp, style, verify, fetchId)}>Load More</div>
-                                        </div>
-                                    )}
+                                    {(() => {
+                                        const videos = [];
+                                        for (let i = 1; i <= 6; i++) {
+                                            videos.push(
+                                                <div className="col-sm-6 col-md-4 p-2 p-sm-3 p-lg-4" key={i}>
+                                                    <video src={`https://d1whtbopipnjq0.cloudfront.net/shopVideo/shopTemplateVideo${i}.mp4`} autoPlay loop muted></video>
+                                                </div>
+                                            );
+                                        }
+                                        return videos;
+                                    })()}
                                 </div>
                             </div>
                         </section>
+                    ) : (
+                        style === "preview" && (
+                            <section className="product">
+                                <div className="container py-5">
+                                    <h1 className="pb-4"> Products </h1>
+                                    <div className="row">
+                                        {preview && preview.map((preview, index) => (
+                                            <div class="col-sm-6 col-md-4 p-2 p-sm-3 p-lg-4" key={index}>
+                                                <video src={`https://d1whtbopipnjq0.cloudfront.net/shopVideo/${preview.videoFilename}`} autoPlay loop muted></video>
+                                            </div>
+                                        ))}
+                                        {load && fetchId && (
+                                            <div className="loadMore">
+                                                <div className="loadMore">
+                                                    <div className="loadMore">
+                                                        <div onClick={() => getPreview(temp, style, verify, fetchId)}>Load More</div>
+                                                    </div>
+                                                    <div onClick={() => getPreview(temp, style, verify, fetchId)}>Load More</div>
+                                                </div>
+                                                <div onClick={() => getPreview(temp, style, verify, fetchId)}>Load More</div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </section>
+                        )
                     )
-                )}
+                }
                 <section className="footer">
                     <div className="container">
                         <div className="row">
@@ -164,7 +240,7 @@ export default function Template() {
                         </div>
                     </div>
                 </section>
-            </div>
+            </div >
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" ></script>
             <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -172,7 +248,7 @@ export default function Template() {
             <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"> </script>
-        </div>
+        </div >
     )
 
 }
