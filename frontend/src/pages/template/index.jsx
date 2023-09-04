@@ -8,8 +8,13 @@ import { Helmet } from "react-helmet";
 
 export default function Template() {
     const [template, setTemplate] = useState('');
-    const [preview,setPreview] = useState('');
+    const [preview,setPreview] = useState([]);
+    const [temp,setTemp] = useState('');
+    const [verify,setVerify] = useState('');
     const [style, setStyle] = useState('');
+    const [fetchId,setFetchId] = useState('');
+    const [load,setLoad] = useState(false);
+
     const getBanner = async () => {
         let tempId = 0;
         let verifyId = 0;
@@ -19,11 +24,16 @@ export default function Template() {
             tempId = urlParams.get('tempId');
             type = "template";
             setStyle(type);
+            setTemp(tempId);
+            setVerify(verifyId);
         } else if (urlParams.get('previewId')) {
             tempId = urlParams.get('previewId');
             verifyId = urlParams.get('verifyId');
             type = "preview";
             setStyle(type);
+            setTemp(tempId);
+            setVerify(verifyId);
+            getPreview(tempId,type,verifyId,0);
         }
         try {
             const response = await axios.post(`https://pepzoondev.hifrds.com/api/v3/shopDashboard/getTemplateDetail`, {tempId:tempId,type:type,verifyId:verifyId,});
@@ -33,27 +43,34 @@ export default function Template() {
                 Navigate('/error');
             }
             setTemplate(response.data);
-            if (style === "preview"){
-                getPreview(tempId,type,verifyId,0);
+        } catch (error) {
+            toast.error('Error fetching profile:', error.message);
+        }
+    };
+    const getPreview = async (tempId,type,verifyId,fetchId) =>{
+        try {
+            const counteraction  = await axios.post("https://pepzoondev.hifrds.com/api/v3/shopDashboard/getPreviewProduct",
+            {
+                tempId:tempId,
+                type:type,
+                verifyId:verifyId,
+                fetchId:fetchId
+            });
+            setPreview(counteraction.data);
+            if(counteraction.data.length === 6){
+                const Id = counteraction.data[counteraction.data.length - 1].id;
+                setFetchId(Id);
+                setLoad(true);
+            } else{
+                setLoad(false);
             }
         } catch (error) {
             toast.error('Error fetching profile:', error.message);
         }
     };
-    useEffect(() => {
+    useEffect(()=>{
         getBanner();
-    }, []);
-    const getPreview = async (tempId,type,verifyId,fetchId) =>{
-        try {
-            const counteraction  = await axios.post("https://pepzoondev.hifrds.com/api/v3/shopDashboard/getPreviewProduct",{tempId:tempId,type:type,verifyId:verifyId,fetchId:fetchId});
-            setPreview(counteraction.data);
-
-        } catch (error) {
-            toast.error('Error fetching profile:', error.message);
-        }
-    };
-    useEffect(() => {
-        getPreview()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     return (
         <div>
@@ -66,7 +83,7 @@ export default function Template() {
             </Helmet>
             <div>
                 {template && template.map((template, index) => (
-                    <section key={index} class="banner" style={{
+                    <section key={index} className="banner" style={{
                         backgroundImage: `url(https://d1whtbopipnjq0.cloudfront.net/shopTemplate/${template.backgroundImage})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
@@ -88,7 +105,7 @@ export default function Template() {
                     </section>
                 ))}
                 {style === "template" ? (
-                    <section class="product">
+                    <section className="product">
                         <div className="container py-5">
                             <h1 className="pb-4"> Products </h1>
                             <div className="row">
@@ -108,7 +125,7 @@ export default function Template() {
                     </section>
                 ) : (
                     style === "preview" && (
-                        <section class="product">
+                        <section className="product">
                             <div className="container py-5">
                                 <h1 className="pb-4"> Products </h1>
                                 <div className="row">
@@ -117,12 +134,17 @@ export default function Template() {
                                             <video src={`https://d1whtbopipnjq0.cloudfront.net/shopVideo/${preview.videoFilename}`} autoPlay loop muted></video>
                                         </div>
                                     ))}
+                                    {load && fetchId && (
+                                    <div className="loadMore">
+                                        <div onClick={() => getPreview(temp,style,verify,fetchId)}>Load More</div>
+                                    </div>
+                                    )}
                                 </div>
                             </div>
                         </section>
                     )
                 )}
-                <section class="footer">
+                <section className="footer">
                     <div className="container">
                         <div className="row">
 

@@ -55,30 +55,30 @@ export default function Home() {
                 <meta name="theme-color" content="#000" />
                 <link rel="shortcut icon" href={favicon} type="image/x-icon" />
             </Helmet>
-            <div class="index-body">
-                <section class="boxed-up">
-                    <div class="shop-static">
-                        <header class="header-index">
-                            <div class="logo-align">
+            <div className="index-body">
+                <section className="boxed-up">
+                    <div className="shop-static">
+                        <header className="header-index">
+                            <div className="logo-align">
                                 <img src={logo} alt="logo" />
                                 <div>
                                     <h1>Shops</h1>
                                     <p>Near Me</p>
                                 </div>
                             </div>
-                            <p class="shop-description">Shop Near is a cutting-edge mobile application designed to enhance your shopping experience by providing a comprehensive and convenient way to discover and locate nearby stores, boutiques, and shopping centers. Whether you're searching for the latest fashion trends, electronics, home decor, or any other type of retail therapy, Shop Near is here to guide you.</p>
-                            <div class="stores">
+                            <p className="shop-description">Shop Near is a cutting-edge mobile application designed to enhance your shopping experience by providing a comprehensive and convenient way to discover and locate nearby stores, boutiques, and shopping centers. Whether you're searching for the latest fashion trends, electronics, home decor, or any other type of retail therapy, Shop Near is here to guide you.</p>
+                            <div className="stores">
                                 <a href="#f"><img src={appStore} alt="appstore" /><p>Coming Soon!</p></a>
                                 <a href="#s"><img src={playStore} alt="playstore" /><p>Coming Soon!</p></a>
                             </div>
                         </header>
-                        <div class="phone-images">
+                        <div className="phone-images">
                             <img src={phone1} alt="phone" />
                             <img src={phone2} alt="phone" />
                         </div>
                     </div>
                 </section>
-                <footer class="footer-index">
+                <footer className="footer-index">
                     <div className="footer-flex-index">
                         <a href="terms#privacy" target="_self">Privacy Policy</a>
                         <a href="terms" target="_self">Terms & Conditions</a>

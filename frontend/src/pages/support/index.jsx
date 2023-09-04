@@ -52,20 +52,20 @@ export default function Support() {
                 <link rel="shortcut icon" href={favicon} type="image/x-icon" />
                 <link rel="stylesheet" href="App.css"></link>
             </Helmet>
-            <div class="support-theme">
-                <section class="boxed-up">
-                    <header class="header-privacy">
+            <div className="support-theme">
+                <section className="boxed-up">
+                    <header className="header-privacy">
                         <img src={logo} alt="logo" />
                         <div>
                             <p>Shops</p>
                             <p>Near me</p>
                         </div>
                     </header>
-                    <section class="support-class">
+                    <section className="support-class">
                         <p>Support</p>
-                        <p>For any queries and support needed, reach us at <a href="mailto:support@storesnearme.in" class="link-color">support@storesnearme.in</a>. Our team will respond and do the needful.</p>
+                        <p>For any queries and support needed, reach us at <a href="mailto:support@storesnearme.in" className="link-color">support@storesnearme.in</a>. Our team will respond and do the needful.</p>
                     </section>
-                    <footer class="support-footer">© Copyrights 2023 | All rights reserved</footer>
+                    <footer className="support-footer">© Copyrights 2023 | All rights reserved</footer>
                 </section>
             </div>
         </div>
