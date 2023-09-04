@@ -33,7 +33,6 @@ export default function Template() {
             setStyle(type);
             setTemp(tempId);
             setVerify(verifyId);
-            getPreview(tempId,type,verifyId,0);
         }
         try {
             const response = await axios.post(`https://pepzoondev.hifrds.com/api/v3/shopDashboard/getTemplateDetail`, {tempId:tempId,type:type,verifyId:verifyId,});
@@ -43,6 +42,9 @@ export default function Template() {
                 Navigate('/error');
             }
             setTemplate(response.data);
+            if(type==="preview"){
+                getPreview(tempId,type,verifyId,0);
+            }
         } catch (error) {
             toast.error('Error fetching profile:', error.message);
         }
@@ -56,7 +58,8 @@ export default function Template() {
                 verifyId:verifyId,
                 fetchId:fetchId
             });
-            setPreview(counteraction.data);
+            console.log(counteraction.data)
+            setPreview([...preview,...counteraction.data])
             if(counteraction.data.length === 6){
                 const Id = counteraction.data[counteraction.data.length - 1].id;
                 setFetchId(Id);
@@ -68,9 +71,9 @@ export default function Template() {
             toast.error('Error fetching profile:', error.message);
         }
     };
+    console.log(preview);
     useEffect(()=>{
         getBanner();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     return (
         <div>
