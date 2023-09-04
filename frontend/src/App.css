@@ -38,15 +38,15 @@ html,body
 }
 @font-face {
   font-family: shop-regular;
-  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/pages/fonts/AvenirNextLTPro-Regular.otf);
+  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/fonts/AvenirNextLTPro-Regular.otf);
 }
 @font-face {
   font-family: shop-bold;
-  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/pages/fonts/AvenirNextLTPro-Bold.otf);
+  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/fonts/AvenirNextLTPro-Bold.otf);
 }
 @font-face {
   font-family: shop-light;
-  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/pages/fonts/AvenirNextLTPro-It.otf);
+  src: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/fonts/AvenirNextLTPro-It.otf);
 }
 
 body
@@ -199,7 +199,7 @@ body
 }
 .phone-images::before
 {
-  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/pages/images/dots.png);
+  content: url(/Users/ahamednasith/Documents/Shops_project/frontend/src/images/dots.png);
   position: absolute;
   right: -800px;
   z-index: -2;

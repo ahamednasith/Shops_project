@@ -1,21 +1,21 @@
 import React from "react";
 import "../../App.css";
 import { Helmet } from "react-helmet";
-import logo from "../images/logo.png";
-import appStore from "../images/appstore.png";
-import playStore from "../images/playstore.png";
-import phone1 from "../images/phone1.png";
-import phone2 from "../images/phone2.png";
-import apple57x57 from "../images/apple-touch-icon-57x57.png";
-import apple72x72 from "../images/apple-touch-icon-72x72.png";
-import apple76x76 from "../images/apple-touch-icon-76x76.png";
-import apple114x114 from "../images/apple-touch-icon-114x114.png";
-import apple120x120 from "../images/apple-touch-icon-120x120.png";
-import apple144x144 from "../images/apple-touch-icon-144x144.png";
-import apple152x152 from "../images/apple-touch-icon-152x152.png";
-import apple180x180 from "../images/apple-touch-icon-180x180.png";
-import favicon from "../images/favicon.ico";
-import banner from "../images/banner.jpeg";
+import logo from "../../images/logo.png";
+import appStore from "../../images/appstore.png";
+import playStore from "../../images/playstore.png";
+import phone1 from "../../images/phone1.png";
+import phone2 from "../../images/phone2.png";
+import apple57x57 from "../../images/apple-touch-icon-57x57.png";
+import apple72x72 from "../../images/apple-touch-icon-72x72.png";
+import apple76x76 from "../../images/apple-touch-icon-76x76.png";
+import apple114x114 from "../../images/apple-touch-icon-114x114.png";
+import apple120x120 from "../../images/apple-touch-icon-120x120.png";
+import apple144x144 from "../../images/apple-touch-icon-144x144.png";
+import apple152x152 from "../../images/apple-touch-icon-152x152.png";
+import apple180x180 from "../../images/apple-touch-icon-180x180.png";
+import favicon from "../../images/favicon.ico";
+import banner from "../../images/banner.jpeg";
 
 export default function Home() {
     return (

@@ -58,7 +58,6 @@ export default function Template() {
                 verifyId:verifyId,
                 fetchId:fetchId
             });
-            console.log(counteraction.data)
             setPreview([...preview,...counteraction.data])
             if(counteraction.data.length === 6){
                 const Id = counteraction.data[counteraction.data.length - 1].id;
@@ -71,7 +70,6 @@ export default function Template() {
             toast.error('Error fetching profile:', error.message);
         }
     };
-    console.log(preview);
     useEffect(()=>{
         getBanner();
     },[]);
