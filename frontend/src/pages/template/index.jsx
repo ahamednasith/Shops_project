@@ -79,7 +79,6 @@ export default function Template() {
     };
     useEffect(() => {
         getBanner();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -93,6 +92,7 @@ export default function Template() {
             </Helmet>
             <div>
                 <Slider
+                    autoplay={true}
                     dots={true}
                     infinite={true}
                     speed={300}
@@ -103,6 +103,7 @@ export default function Template() {
                         {
                             breakpoint: 768,
                             settings: {
+                                autoplay:true,
                                 dots: true,
                                 infinite: true,
                                 speed: 300,
