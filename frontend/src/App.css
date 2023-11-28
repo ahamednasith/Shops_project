@@ -38,19 +38,18 @@ html,body
 }
 @font-face {
   font-family: shop-regular;
-  src: url("./fonts/AvenirNextLTPro-Regular.otf");
+  src: url(../src/fonts/AvenirNextLTPro-Regular.otf);
 }
 @font-face {
   font-family: shop-bold;
-  src: url("./fonts/AvenirNextLTPro-Bold.otf");
+  src: url(../src/fonts/AvenirNextLTPro-Bold.otf);
 }
 @font-face {
   font-family: shop-light;
-  src: url("./fonts/AvenirNextLTPro-It.otf");
+  src: url(../src/fonts/AvenirNextLTPro-It.otf);
 }
 
-body
-{
+body {
     font-family: shop-regular;
     color: var(--primary-color);
     background: var(--primary-background);
@@ -199,7 +198,7 @@ body
 }
 .phone-images::before
 {
-  content: url("./images/dots.png");
+  content: url(../src/images/dots.png);
   position: absolute;
   right: -800px;
   z-index: -2;
@@ -548,6 +547,7 @@ body
     padding-left: 15px;
   }
 }
+
 
 
 

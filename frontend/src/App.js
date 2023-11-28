@@ -5,6 +5,7 @@ import Support from './pages/support';
 import Terms from './pages/terms';
 import Template from './pages/template';
 import Error from './pages/error';
+import Website from './pages/website';
 
 function CatchAll() {
   const currentPath = window.location.pathname;
@@ -18,6 +19,7 @@ function App() {
         <Route path="support" element={<Support/>}/>
         <Route path="terms" element={<Terms/>}/>
         <Route path="template" element={<Template/>}/>
+        <Route path="website" element={<Website/>}/>
         <Route path="error" element={<Error/>}/> 
         <Route path="*" element={<CatchAll/>}/>
       </Routes>
